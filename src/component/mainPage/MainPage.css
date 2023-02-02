@@ -1,0 +1,16 @@
+.line-hover{
+      cursor: pointer;
+      border-width: 3px;
+      border-color: transparent;
+      font-weight: 600;
+      color: slategray;
+      line-height: 30px;
+      padding: 4px;
+      padding-left: 0;
+      margin-right: 20px;
+}
+
+.line-hover:hover{
+    color: red;
+    border-bottom-color: red;
+}
