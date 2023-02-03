@@ -1,19 +1,26 @@
-import React from 'react'
-import CreateFlashCard from '../createFlashCard/CreateFlashCard'
-import { MyFlashCard } from '../myFlashCard/MyFlashCard';
+import React from 'react';
+import { useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import CreateFlashCard from '../FlashCard/createFlashCard/CreateFlashCard'
+import MyFlashCard from '../FlashCard/myFlashCard/MyFlashCard';
 import './MainPage.css';
 
-export const MainPage = () => {
+const MainPage = () => {
+    const [isFirstLinkActive, setisFirstLinkActive] = useState(true);
     return (
         <div className="container-fluid my-12 mx-24">
             <h2 className="text-xl text-black font-bold">Create Flash Card</h2>
-            <div className="my-3">
-                <span className="line-hover">Create New </span>
-                <span className="line-hover">My FlashCard </span>
-                <hr/>
+            <div className="my-3" data-testid="links">
+                <Link data-testid="createFlashCard-link" to="/" className={`line-hover ${isFirstLinkActive ? 'active' : ''}`} onClick={() => setisFirstLinkActive(true)}>Create New </Link>
+                <Link data-testid="myFlashCard-link" to="/myFlashCard" className={`line-hover ${isFirstLinkActive ? '' : 'active'}`} onClick={() => setisFirstLinkActive(false)}>My FlashCard </Link>
+                <hr />
             </div>
-            <CreateFlashCard/>
-            <MyFlashCard/>
+            <Routes>
+                <Route path="/" element={<CreateFlashCard />}></Route>
+                <Route path="/myFlashCard" element={<MyFlashCard />}></Route>
+            </Routes>
         </div>
+
     )
-}
+};
+export default MainPage;

@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const MyFlashCard = () => {
+const MyFlashCard = () => {
     return (
         <div>
             My FlashCard
         </div>
     )
 }
+
+export default MyFlashCard;

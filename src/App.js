@@ -1,5 +1,4 @@
-import './App.css';
-import { MainPage } from './component/mainPage/MainPage';
+import  MainPage  from './component/mainPage/MainPage';
 import NavBar from './component/navBar/NavBar';
 
 function App() {
