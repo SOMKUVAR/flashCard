@@ -1,11 +1,10 @@
-
-
+import CreateGroup from "./CreateGroup";
 
 const CreateFlashCard = () => {
     return (
-        <div>
-            Create flashCard
-        </div>
+        <div class="container-fluid my-8">
+                   <CreateGroup/>
+            </div>
     )
 }
 
