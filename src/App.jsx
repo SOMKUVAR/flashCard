@@ -3,7 +3,7 @@ import NavBar from './component/navBar/NavBar';
 
 function App() {
   return (
-    <div className="min-h-screen bg-red-50">
+    <div>
          <NavBar/>
          <MainPage/>
     </div>

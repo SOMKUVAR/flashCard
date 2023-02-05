@@ -1,9 +1,12 @@
 import CreateGroup from "./CreateGroup";
+import EnterTerm from "./EnterTerm";
 
 const CreateFlashCard = () => {
+     
     return (
-        <div class="container-fluid my-8">
+        <div className="container-fluid my-8">
                    <CreateGroup/>
+                   <EnterTerm/>
             </div>
     )
 }
