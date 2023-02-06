@@ -3,7 +3,7 @@ import NavBar from './component/navBar/NavBar';
 
 function App() {
   return (
-    <div>
+    <div className='bg-red-50'>
          <NavBar/>
          <MainPage/>
     </div>

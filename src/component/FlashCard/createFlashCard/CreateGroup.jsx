@@ -1,8 +1,8 @@
-import { Formik } from "formik";
 import ContainerWithShadow from "../../Layout/ContainerWithShadow";
 import Input from "../../Layout/Input";
 import TextArea from "../../Layout/TextArea";
 import UploadImageButton from "../../Layout/UploadImageButton";
+
 const CreateGroup = () => {
   return (
     <ContainerWithShadow>

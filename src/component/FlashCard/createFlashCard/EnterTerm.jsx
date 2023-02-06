@@ -8,7 +8,7 @@ const EnterTerm = () =>{
 
     const onClick = () => {
           const newEnterTermFormComponents = [...enterTermFormComponents];
-          newEnterTermFormComponents.push(<EnterTermForm key={new Date()} index={newEnterTermFormComponents.length}/>);
+          newEnterTermFormComponents.push(<EnterTermForm key={new Date()} index={newEnterTermFormComponents.length+1}/>);
           setEnterTermFormComponents(newEnterTermFormComponents);
     }
 

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import CreateFlashCard from '../FlashCard/createFlashCard/CreateFlashCard'
 import MyFlashCard from '../FlashCard/myFlashCard/MyFlashCard';
-import RedButton from '../Layout/RedButton';
 import './MainPage.css';
 
 const MainPage = () => {
@@ -22,9 +21,6 @@ const MainPage = () => {
                         <Route path="/" element={<CreateFlashCard />}></Route>
                         <Route path="/myFlashCard" element={<MyFlashCard />}></Route>
                     </Routes>
-                    <div className="flex flex-wrap justify-center">
-                   <RedButton>Create</RedButton>
-                   </div>
                 </div>
             </div>
         </div>
