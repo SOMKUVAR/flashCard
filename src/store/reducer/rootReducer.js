@@ -3,7 +3,7 @@ import { onSubmit } from "./onSubmit";
 
 
 const rootReducer = combineReducers({
-    intialValues:onSubmit
+    flashCardForm:onSubmit
 });
 
 export default rootReducer;

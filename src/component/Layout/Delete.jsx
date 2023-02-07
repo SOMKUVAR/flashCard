@@ -1,8 +1,8 @@
 import {AiFillDelete} from 'react-icons/ai';
 
-const DeleteButton = () => {
+const DeleteButton = (props) => {
      return (
-        <button className='text-red-600 '>
+        <button {...props} className='text-red-500'>
             <AiFillDelete style={{width:20,height:20}}/>
         </button>
      )

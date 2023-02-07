@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewTerm } from "../../../store/actions/createFlashCard";
 import ContainerWithShadow from "../../Layout/ContainerWithShadow"
 import TransparentButton from "../../Layout/TransparentButton";
 import EnterTermForm from "./EnterTermForm";
 
 const EnterTerm = () =>{
-    const [enterTermFormComponents,setEnterTermFormComponents] = useState([<EnterTermForm key={new Date()} index={1}/>])
-
+    const terms = useSelector(state => state.flashCardForm.terms);
+    const dispatch = useDispatch();
     const onClick = () => {
-          const newEnterTermFormComponents = [...enterTermFormComponents];
-          newEnterTermFormComponents.push(<EnterTermForm key={new Date()} index={newEnterTermFormComponents.length+1}/>);
-          setEnterTermFormComponents(newEnterTermFormComponents);
+        dispatch(addNewTerm( {
+            "id":new Date(),
+            "term":"",
+            "defination":"",
+            "image":null,
+            "focus":false
+        }));
     }
 
     return (
         <ContainerWithShadow>
             {
-                enterTermFormComponents.map((enterTermForm) => enterTermForm)
+                terms.map((term,index) => <EnterTermForm index={index} {...term} key={term.id}/>)
             }
             <TransparentButton onClick={onClick}>+ Add More</TransparentButton>
         </ContainerWithShadow>

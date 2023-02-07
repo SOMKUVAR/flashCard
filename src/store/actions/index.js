@@ -1,3 +1,7 @@
-import { onSubmit } from "./onSubmit";
+import { onSubmit,addNewTerm,focusEnterTermForm,deleteTerm} from "./createFlashCard";
 
-export {onSubmit};
+export {
+    onSubmit,
+    addNewTerm,
+    focusEnterTermForm,deleteTerm
+};
