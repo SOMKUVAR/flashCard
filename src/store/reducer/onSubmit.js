@@ -4,7 +4,7 @@ const intialState = {
     createGroup:{
         "create_Group":"hii",
         "description":"",
-        "image":""
+        "image":null
     },
     terms : [
         {

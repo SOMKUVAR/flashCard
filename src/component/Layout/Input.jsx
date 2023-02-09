@@ -3,7 +3,7 @@ import React from "react";
 
 const Input = (props) => {
     return (
-        <div className="mb-3 w-11/12 sm:w-96 mx-3">
+        <div className="w-11/12 sm:w-96 mx-3">
             <label className="font-semibold form-label 
         inline-block mb-2 text-slate-500">{props.label}</label>
             <input type="text" {...props.field}
