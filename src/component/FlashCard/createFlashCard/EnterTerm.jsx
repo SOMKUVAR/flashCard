@@ -12,8 +12,7 @@ const EnterTerm = () =>{
             "id":new Date(),
             "term":"",
             "defination":"",
-            "image":null,
-            "focus":false
+            "image":null
         }));
     }
 

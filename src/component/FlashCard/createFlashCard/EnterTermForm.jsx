@@ -14,28 +14,35 @@ const EnterTermForm = (props) => {
         document.getElementById(props.id).children[0].children[1].focus();
         dispatch(focusEnterTermForm(props.id));
     }
-    const onDelete = () =>{
-          dispatch(deleteTerm(props.id));
+    const onDelete = () => {
+        dispatch(deleteTerm(props.id));
     }
 
     return (
-        <div className="flex flex-wrap items-center justify-center flex-col xl:flex-row mb-5">
-            <div className="rounded-full items-center justify-center h-8 w-8 flex text-white bg-red-600 mx-3 mt-3">{props.index+1}</div>
-            <div id= {props.id} className="w-full sm:w-auto flex justify-center">
-            <Field component={Input} label="Enter Term*" name={`${'terms['+props.index+'].term'}`} />
-            <ErrorMessage>{(errMsg)=>{<div></div>}}</ErrorMessage>
+        <div className="flex flex-wrap items-start  justify-center flex-col xl:flex-row mb-5">
+            <div className="rounded-full items-center justify-center h-8 w-8 flex text-white bg-red-600 mx-3 mt-3">{props.index + 1}</div>
+            <div id={props.id} className="w-full sm:w-auto flex justify-center flex-col">
+                <Field component={Input} label="Enter Term*" name={`terms[${props.index}].term`} />
+                <ErrorMessage name={`terms[${props.index}].term`}>
+                    {(err) => <div className="text-red-600 mb-3 w-11/12 sm:w-96 mx-3">{err}</div>}
+                </ErrorMessage>
             </div>
-            <Field component={SmallTextArea} label="Enter Defination*" name={`${'terms['+props.index+'].defination'}`} />
-            <div className="flex flex-wrap items-center">
-            <div className="mt-5 ml-2">
-                <SelectImage />
+            <div className="w-full sm:w-auto flex justify-center flex-col">
+                <Field component={SmallTextArea} label="Enter Defination*" name={`terms[${props.index}.defination`} />
+                <ErrorMessage name={`terms[${props.index}.defination`}>
+                    {(err) => <div className="text-red-600 mb-3 w-11/12 sm:w-96 mx-3">{err}</div>}
+                </ErrorMessage>
             </div>
-            <div className="mt-5 ml-3">
-                    <DeleteButton onClick={onDelete}/>
+            <div className="flex flex-wrap items-center mt-8">
+                <div className="ml-2">
+                    <SelectImage />
+                </div>
+                <div className="ml-3">
+                    <DeleteButton onClick={onDelete} />
                     <EditButton onClick={onEdit} />
+                </div>
             </div>
-            </div>
-            
+
         </div>
     )
 }
