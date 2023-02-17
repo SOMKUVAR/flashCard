@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const SUPPORTED_FORMATS = ["image/png", "image/jpg", "image/jpeg"];
+export const SUPPORTED_FORMATS = ["image/png", "image/jpg", "image/jpeg"];
 const validationSchema = Yup.object().shape(
     {
         createGroup:Yup.object().shape(

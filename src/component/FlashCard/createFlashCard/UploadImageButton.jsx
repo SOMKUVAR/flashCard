@@ -3,7 +3,7 @@ import {MdOutlineUploadFile} from 'react-icons/md';
 
 const UploadImageButton = (props)=>{
     const ref = useRef();
-    const [name,setName] = useState("");
+    const [name,setName] = useState("No File Chosen");
     return (
         <div className='flex justify-center align-center'>
         <input hidden  ref={ref}  type='file' onChange={(event)=>{ 

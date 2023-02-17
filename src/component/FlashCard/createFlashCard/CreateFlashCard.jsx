@@ -10,7 +10,7 @@ const CreateFlashCard = () => {
     const initialValues = useSelector((state) => state.flashCardForm);
     return (
 
-        <div className="container-fluid my-8">
+        <div className="container-fluid mt-6 mb-0">
             <Formik enableReinitialize={true}
                 onSubmit={(state) => {
                 console.log(state);}} 

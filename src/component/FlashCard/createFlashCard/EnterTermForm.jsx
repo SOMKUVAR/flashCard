@@ -20,7 +20,7 @@ const EnterTermForm = (props) => {
 
     return (
         <div className="flex flex-wrap items-start  justify-center flex-col xl:flex-row mb-5">
-            <div className="rounded-full items-center justify-center h-8 w-8 flex text-white bg-red-600 mx-3 mt-3">{props.index + 1}</div>
+            <div className="rounded-full items-center justify-center h-8 w-8 flex text-white bg-red-600 mx-3 mt-8">{props.index + 1}</div>
             <div id={props.id} className="w-full sm:w-auto flex justify-center flex-col">
                 <Field component={Input} label="Enter Term*" name={`terms[${props.index}].term`} />
                 <ErrorMessage name={`terms[${props.index}].term`}>
@@ -33,14 +33,15 @@ const EnterTermForm = (props) => {
                     {(err) => <div className="text-red-600 mb-3 w-11/12 sm:w-96 mx-3">{err}</div>}
                 </ErrorMessage>
             </div>
-            <div className="flex flex-wrap items-center mt-8">
+            <div className="flex flex-wrap items-start mt-8">
                 <div className="ml-2">
-                    <SelectImage />
+                   <Field component={SelectImage} name={`terms[${props.index}.image`}/>
                 </div>
-                <div className="ml-3">
+                <div className="ml-3 flex flex-col">
                     <DeleteButton onClick={onDelete} />
                     <EditButton onClick={onEdit} />
-                </div>
+            </div>
+                 
             </div>
 
         </div>
