@@ -1,8 +1,8 @@
-import { ADD_TERM, DELETE_TERM, FOCUS_TERM, SUBMIT } from "../../constants/actions";
+import { ADD_TERM, DELETE_TERM, SUBMIT } from "../../constants/actions";
 
 const intialState = {
     createGroup:{
-        "create_Group":"hii",
+        "create_Group":"",
         "description":"",
         "image":null
     },
@@ -17,28 +17,20 @@ const intialState = {
     ]
 };
 
-const onSubmit = (state=intialState,action)=>{
+const flashCardForm = (state=intialState,action)=>{
     switch(action.type){
         case SUBMIT:
            {
-             console.log('submit button click');
-             return state;
+             console.log(action.payload);
+             localStorage.setItem('state',JSON.stringify(action.payload));
+             return action.payload;
            }
         case ADD_TERM:
             { 
                let terms = state.terms;
                terms.push(action.payload);
                return {...state,terms}; 
-            }
-        case FOCUS_TERM:
-         {   let terms = state.terms;
-            terms = terms.map(term => {
-            if(action.payload === term.id){term.focus = true;}
-             return term;
-            });
-            return {...state,terms}; 
-        }
-          
+            }  
         case DELETE_TERM:
           { 
             let terms = state.terms;
@@ -50,5 +42,5 @@ const onSubmit = (state=intialState,action)=>{
     }
 }
 
-export {onSubmit};
+export default flashCardForm;
 

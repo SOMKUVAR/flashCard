@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import { onSubmit } from "./onSubmit";
+import flashCardForm from "./creatFlashCard";
 
 
 const rootReducer = combineReducers({
-    flashCardForm:onSubmit
+    flashCardForm:flashCardForm
 });
 
 export default rootReducer;

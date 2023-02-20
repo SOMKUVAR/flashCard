@@ -1,6 +1,5 @@
-import {ErrorMessage} from "formik";
 import {useRef, useState} from "react";
-import {SUPPORTED_FORMATS} from "../FlashCard/createFlashCard/validationSchema";
+import {SUPPORTED_FORMATS} from "./validationSchema";
 
 
 const SelectImage = (props) => {
@@ -34,7 +33,7 @@ const SelectImage = (props) => {
                      font-23 text-blue-400 font-medium text-xs leading-tight uppercase rounded hover:bg-black
                      hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
                      Select Image</button> : <div className="w-32"><img  src={url} className="w-32 h-20"/></div>}
-                    <div className="text-red-600">{err}</div>
+                    <div className="text-red-600 md:w-32">{err}</div>
         </div>
     )
 }

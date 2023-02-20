@@ -8,7 +8,7 @@ import './MainPage.css';
 const MainPage = () => {
     const [isFirstLinkActive, setisFirstLinkActive] = useState(true);
     return (
-        <div className="container my-9 mx-auto">
+        <div className="container my-5 mb-3 mx-auto">
             <div className="flex flex-wrap justify-center">
                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-9/12 px-3">
                     <h2 className="text-xl text-black font-bold">Create Flash Card</h2>
