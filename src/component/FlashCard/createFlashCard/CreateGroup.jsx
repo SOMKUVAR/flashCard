@@ -5,7 +5,7 @@ import Input from "../../Layout/Input";
 import TextArea from "../../Layout/TextArea";
 import UploadImageButton from "./UploadImageButton";
 
-const CreateGroup = () => {
+const CreateGroup = (props) => {
   
   return (
     <ContainerWithShadow>
@@ -16,8 +16,7 @@ const CreateGroup = () => {
         </div>
         <div className="ml-3 md:mt-8">
         <Field component={UploadImageButton} name={`${CREATEGROUP}.${IMAGE}`} />
-        <ErrorMessage name={`${CREATEGROUP}.${IMAGE}`}>{(err)=> <div className="text-center text-red-600">{err}</div>}</ErrorMessage>
-        </div>
+       </div>
       </div>
       <div className="mb-3 mx-3 xl:w-3/4">
         <Field name={`${CREATEGROUP}.${DESCRIPTION}`} component={TextArea}label={"Add description"} /> 

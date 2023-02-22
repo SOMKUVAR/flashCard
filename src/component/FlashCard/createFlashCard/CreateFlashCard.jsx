@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { onSubmit } from "../../../store/actions";
+import { emptyTermsImageURL, onSubmit, setCreateGroupImageName } from "../../../store/actions";
 import RedButton from "../../Layout/RedButton";
 import CreateGroup from "./CreateGroup";
 import EnterTerm from "./EnterTerm";
@@ -8,6 +8,7 @@ import validationSchema from "./validationSchema";
 
 
 const CreateFlashCard = () => {
+
     const initialValues = useSelector((state) => state.flashCardForm);
     const dispatch = useDispatch();
 
@@ -15,8 +16,11 @@ const CreateFlashCard = () => {
 
         <div className="container-fluid mt-3 mb-0">
             <Formik enableReinitialize={true}
-                onSubmit={(state) => {
+                onSubmit={(state,{resetForm}) => {
                 dispatch(onSubmit(state));
+                dispatch(setCreateGroupImageName("No Chosen File"))
+                dispatch(emptyTermsImageURL());
+                resetForm();
                }} 
                 initialValues={initialValues} 
                 validationSchema={validationSchema}

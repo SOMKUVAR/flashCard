@@ -1,6 +1,6 @@
 import { ErrorMessage, Field } from "formik";
 import { useDispatch } from "react-redux";
-import { deleteTerm, focusEnterTermForm } from "../../../store/actions";
+import { deleteTerm } from "../../../store/actions";
 import DeleteButton from "../../Layout/Delete";
 import EditButton from "../../Layout/EditButton";
 import Input from "../../Layout/Input";
@@ -34,15 +34,13 @@ const EnterTermForm = (props) => {
             </div>
             <div className="flex flex-wrap items-start mt-8">
                 <div className="ml-2">
-                   <Field component={SelectImage} name={`terms[${props.index}.image`}/>
+                   <Field component={SelectImage} name={`terms[${props.index}.image`} index={props.index} url={props.url}/>
                 </div>
                 <div className="ml-3 flex flex-col">
                     <DeleteButton onClick={onDelete} />
                     <EditButton onClick={onEdit} />
+            </div>   
             </div>
-                 
-            </div>
-
         </div>
     )
 }

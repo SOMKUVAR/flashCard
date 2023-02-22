@@ -1,4 +1,5 @@
 import { ADD_TERM, DELETE_TERM, SUBMIT } from "../../constants/actions";
+import { ADD_URL, EMPTY_URL, SET_NAME, SET_URL } from "../../constants/createFlashCard";
 
 const intialState = {
     createGroup:{
@@ -11,8 +12,7 @@ const intialState = {
             "id":new Date(),
             "term":"",
             "defination":"",
-            "image":"",
-            "focus":false
+            "image":null
         }
     ]
 };
@@ -21,9 +21,11 @@ const flashCardForm = (state=intialState,action)=>{
     switch(action.type){
         case SUBMIT:
            {
-             console.log(action.payload);
-             localStorage.setItem('state',JSON.stringify(action.payload));
-             return action.payload;
+             console.log(action.payload);   
+             let state1 = JSON.parse(localStorage.getItem('state')) || [];
+             state1.push(action.payload);
+             localStorage.setItem('state',JSON.stringify(state1));
+             return state;
            }
         case ADD_TERM:
             { 
@@ -42,5 +44,42 @@ const flashCardForm = (state=intialState,action)=>{
     }
 }
 
-export default flashCardForm;
+const intitialGroupImageName = "No Chosen File";
+
+const createGroupImageName = (state=intitialGroupImageName,action)=>{
+    switch(action.type){
+     case SET_NAME:
+        return action.payload;
+     default:
+        return state;
+    }
+}
+
+const intitialImageTermsURL = [null];
+
+const imageTermsURL = (state=intitialImageTermsURL,action)=>{
+    switch(action.type){
+        case SET_URL:
+          {
+            let newState = state.map((item,ind)=>{
+                if(ind === action.payload.ind)
+                 return action.payload.value;
+                 return item;
+              });
+              return newState;
+          }
+        case ADD_URL:
+             return [...state,null];
+        case EMPTY_URL:
+            let newState = state.map(()=>null);
+            console.log(newState);
+            return newState;
+        default:
+            return state;
+    }
+}
+
+
+
+export  {flashCardForm,createGroupImageName,imageTermsURL};
 
