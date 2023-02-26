@@ -1,5 +1,5 @@
 import { ADD_TERM, DELETE_TERM, SUBMIT } from "../../constants/actions"
-import { ADD_URL, EMPTY_URL, SET_NAME, SET_URL } from "../../constants/createFlashCard";
+import { ADD_URL, EMPTY_URL, SET_NAME, SET_URL } from "../../constants/create-flash-card";
 
 const onSubmit = (payload) =>{
     return {type : SUBMIT,payload:payload};

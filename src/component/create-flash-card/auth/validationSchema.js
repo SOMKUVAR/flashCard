@@ -11,10 +11,7 @@ const validationSchema = Yup.object().shape(
           terms : Yup.array(
             Yup.object({
             term:Yup.string().required('Please provide term name.'),
-            defination:Yup.string().required('Please provide defination.'),
-        //     image:Yup.mixed().nullable().test("FILE_FORMAT","Please provide jpeg png or jpg format.",
-        //     (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type)))
-        
+            defination:Yup.string().required('Please provide defination.')
     }))
         
     }

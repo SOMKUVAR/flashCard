@@ -1,11 +1,11 @@
 import { ErrorMessage, Field } from "formik";
-import { CREATEGROUP, DESCRIPTION, GROUP_TITLE, IMAGE } from "../../../constants/createFlashCard";
-import ContainerWithShadow from "../../Layout/ContainerWithShadow";
-import Input from "../../Layout/Input";
-import TextArea from "../../Layout/TextArea";
+import { CREATEGROUP, DESCRIPTION, GROUP_TITLE, IMAGE } from "../../../constants/create-flash-card";
+import ContainerWithShadow from "../../UI/ContainerWithShadow";
+import Input from "../../UI/Input";
+import TextArea from "../../UI/TextArea";
 import UploadImageButton from "./UploadImageButton";
 
-const CreateGroup = (props) => {
+const CreateGroup = () => {
   
   return (
     <ContainerWithShadow>

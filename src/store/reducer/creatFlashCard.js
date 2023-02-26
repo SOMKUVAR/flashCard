@@ -1,5 +1,5 @@
 import { ADD_TERM, DELETE_TERM, SUBMIT } from "../../constants/actions";
-import { ADD_URL, EMPTY_URL, SET_NAME, SET_URL } from "../../constants/createFlashCard";
+import { ADD_URL, EMPTY_URL, SET_NAME, SET_URL } from "../../constants/create-flash-card";
 
 const intialState = {
     createGroup:{
@@ -21,15 +21,15 @@ const flashCardForm = (state=intialState,action)=>{
     switch(action.type){
         case SUBMIT:
            {
-             console.log(action.payload);   
-             let state1 = JSON.parse(localStorage.getItem('state')) || [];
+             let state1 = JSON.parse(localStorage.getItem('flashCards')) || [];
              state1.push(action.payload);
-             localStorage.setItem('state',JSON.stringify(state1));
+             localStorage.setItem('flashCards',JSON.stringify(state1));
              return state;
            }
         case ADD_TERM:
             { 
                let terms = state.terms;
+               console.log(terms);
                terms.push(action.payload);
                return {...state,terms}; 
             }  
@@ -72,7 +72,6 @@ const imageTermsURL = (state=intitialImageTermsURL,action)=>{
              return [...state,null];
         case EMPTY_URL:
             let newState = state.map(()=>null);
-            console.log(newState);
             return newState;
         default:
             return state;

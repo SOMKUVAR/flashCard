@@ -1,11 +1,12 @@
 import { Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { emptyTermsImageURL, onSubmit, setCreateGroupImageName } from "../../../store/actions";
-import RedButton from "../../Layout/RedButton";
-import CreateGroup from "./CreateGroup";
-import EnterTerm from "./EnterTerm";
-import validationSchema from "./validationSchema";
-
+import { ToastContainer, toast } from 'react-toastify';
+import { emptyTermsImageURL, onSubmit, setCreateGroupImageName } from "../store/actions";
+import RedButton from "../component/UI/RedButton";
+import validationSchema from "../component/create-flash-card/auth/validationSchema";
+import CreateGroup from "../component/create-flash-card/create-group";
+import EnterTerm from "../component/create-flash-card/enter-term";
+import 'react-toastify/dist/ReactToastify.css';
 
 const CreateFlashCard = () => {
 
@@ -15,12 +16,22 @@ const CreateFlashCard = () => {
     return (
 
         <div className="container-fluid mt-3 mb-0">
-            <Formik enableReinitialize={true}
+            <Formik 
                 onSubmit={(state,{resetForm}) => {
                 dispatch(onSubmit(state));
                 dispatch(setCreateGroupImageName("No Chosen File"))
                 dispatch(emptyTermsImageURL());
                 resetForm();
+                toast.success('Saved Successfully!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
                }} 
                 initialValues={initialValues} 
                 validationSchema={validationSchema}
@@ -35,6 +46,7 @@ const CreateFlashCard = () => {
             </Formik>
             <div>
             </div>
+            <ToastContainer/>
         </div>
 
     )

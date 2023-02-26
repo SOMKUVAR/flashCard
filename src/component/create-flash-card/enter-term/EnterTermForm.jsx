@@ -1,11 +1,11 @@
 import { ErrorMessage, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { deleteTerm } from "../../../store/actions";
-import DeleteButton from "../../Layout/Delete";
-import EditButton from "../../Layout/EditButton";
-import Input from "../../Layout/Input";
+import DeleteButton from "../../UI/Delete";
+import EditButton from "../../UI/EditButton";
+import Input from "../../UI/Input";
 import SelectImage from "./SelectImage";
-import SmallTextArea from "../../Layout/SmallTextArea";
+import SmallTextArea from "../../UI/SmallTextArea";
 
 
 const EnterTermForm = (props) => {

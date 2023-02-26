@@ -1,26 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addNewTerm, addTermImageURL } from "../../../store/actions/createFlashCard";
-import ContainerWithShadow from "../../Layout/ContainerWithShadow"
-import TransparentButton from "../../Layout/TransparentButton";
+import ContainerWithShadow from "../../UI/ContainerWithShadow"
+import TransparentButton from "../../UI/TransparentButton";
 import EnterTermForm from "./EnterTermForm";
 
 const EnterTerm = () =>{
     const imageTermsURL = useSelector(state=> state.imageTermsURL);
     const terms = useSelector(state => state.flashCardForm.terms);
     const dispatch = useDispatch();
+   
     const onClick = () => {
-        dispatch(addNewTerm( {
-            "id":new Date(),
-            "term":"",
-            "defination":"",
-            "image":null
-        }));
-
+        dispatch(addNewTerm( {"id":new Date(),"term":"","defination":"","image":null}));
         dispatch(addTermImageURL());
     }
 
-    console.log(imageTermsURL);
-
+   
     return (
         <ContainerWithShadow>
             {

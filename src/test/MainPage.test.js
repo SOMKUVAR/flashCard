@@ -3,7 +3,7 @@ import { createMemoryHistory } from "history";
 import { BrowserRouter } from "react-router-dom";
 import CreateFlashCard from "../FlashCard/createFlashCard/CreateFlashCard";
 import MyFlashCard from "../FlashCard/myFlashCard/MyFlashCard";
-import MainPage from "./MainPage";
+import MainPage from "../mainPage/MainPage";
 
 afterEach(cleanup);
 
