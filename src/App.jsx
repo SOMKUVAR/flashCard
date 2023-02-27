@@ -2,10 +2,10 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './component/NavBar';
-import './styles/MainPage.css';
 import FlashCardDetail from './pages/FlashCardDetail';
 import FlashCards from './pages/FlashCards';
 import CreateFlashCard from './pages/CreateFlashCard';
+import './styles/MainPage.css';
 
 function App() {
   const [isFirstLinkActive, setisFirstLinkActive] = useState(true);

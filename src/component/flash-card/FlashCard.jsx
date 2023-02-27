@@ -7,7 +7,7 @@ const FlashCard = (props)=>{
       <div
           className="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
           <div className="flex mb-5 items-center">
-          <img src={props.flashCard.createGroup.image} className="mr-4 w-12 h-12 rounded-full"/>
+          <img src={props.flashCard.createGroup.image} className="mr-4 w-12 h-12 rounded-full" alt={`${props.flashCard.createGroup.create_Group}`}/>
           <div>
           <h5
             className="text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
