@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import {flashCardForm,createGroupImageName,imageTermsURL} from "./creatFlashCard";
-import { term, terms } from "./flashCards";
+import { flashCard, term, terms } from "./flashCards";
 
 
 const rootReducer = combineReducers({
@@ -8,7 +8,8 @@ const rootReducer = combineReducers({
     createGroupImageName:createGroupImageName,
     imageTermsURL:imageTermsURL,
     term:term,
-    terms:terms
+    terms:terms,
+    flashCard:flashCard
 });
 
 export default rootReducer;

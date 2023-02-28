@@ -1,4 +1,4 @@
-import {  SET_TERM, SET_TERMS } from "../../constants/terms"
+import {  SET_FLASHCARD, SET_TERM, SET_TERMS } from "../../constants/terms"
 
 
 export const setTerm = (payload) => {
@@ -7,4 +7,8 @@ export const setTerm = (payload) => {
 
 export const setTerms = (payload) => {
     return {type:SET_TERMS,payload:payload};
+}
+
+export const setFlashCard = (payload) => {
+    return {type:SET_FLASHCARD,payload:payload};
 }

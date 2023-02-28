@@ -1,8 +1,9 @@
 import React from 'react'
+import ContainerWithShadow from '../UI/ContainerWithShadow'
 
 const Share = () => {
   return (
-    <div>Share</div>
+    <ContainerWithShadow>Share</ContainerWithShadow>
   )
 }
 

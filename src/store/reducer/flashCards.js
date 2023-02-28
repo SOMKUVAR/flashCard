@@ -1,4 +1,15 @@
-import { SET_TERM, SET_TERMS } from "../../constants/terms";
+import { SET_FLASHCARD, SET_TERM, SET_TERMS } from "../../constants/terms";
+
+const intialFlashCard = {};
+
+const flashCard = (state=intialFlashCard,action) => {
+    switch(action.type){
+        case SET_FLASHCARD:
+          return JSON.parse(localStorage.getItem('flashCards'))[action.payload];
+        default:
+            return state;
+    }
+}
 
 const intialStateTerm = {};
 const term = (state = intialStateTerm,action) =>{
@@ -18,11 +29,11 @@ const terms = (state = intialStateTerms,action) => {
             const terms = [];
             for(let i = 0;i <action.payload.total;i++)
              if(i !== action.payload.index)
-               terms.push(`card ${i+1}`);
+               terms.push(`Card ${i+1}`);
             return terms;
         default:
             return state;
     }
 }
 
-export {term,terms};
+export {term,terms,flashCard};
